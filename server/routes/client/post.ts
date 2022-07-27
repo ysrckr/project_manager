@@ -1,5 +1,4 @@
-import { ExecException } from 'child_process'
-import express, { ErrorRequestHandler, Request, Response } from 'express'
+import express, { Request, Response } from 'express'
 import Client from '../../db/models/Client'
 
 const router = express.Router()
