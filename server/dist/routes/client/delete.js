@@ -15,12 +15,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteClient = void 0;
 const express_1 = __importDefault(require("express"));
 const Client_1 = __importDefault(require("../../db/models/Client"));
+const Project_1 = __importDefault(require("../../db/models/Project"));
 const router = express_1.default.Router();
 // @route   DELETE api/client/:id
 // @desc    Delete client by id
 // @access  Public
 const deleteClient = router.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const projects = yield Project_1.default.find({ clientId: req.params.id });
+        projects.forEach((project) => __awaiter(void 0, void 0, void 0, function* () {
+            yield Project_1.default.findByIdAndDelete(project._id);
+        }));
         const client = yield Client_1.default.findByIdAndDelete(req.params.id);
         res.status(204).json({ msg: 'Client deleted' });
     }

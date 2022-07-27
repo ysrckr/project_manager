@@ -7,6 +7,14 @@ import { getClients, getClientById } from './routes/client/get'
 import { postClient } from './routes/client/post'
 import { editClient } from './routes/client/put'
 import { deleteClient } from './routes/client/delete'
+import {
+	getProjects,
+	getProjectById,
+	getProjectsByClientId,
+} from './routes/projects/get'
+import { createProject } from './routes/projects/post'
+import { updateProject } from './routes/projects/put'
+import { deleteProject } from './routes/projects/delete'
 
 // Load environment variables from .env file
 dotenv.config({
@@ -34,10 +42,24 @@ runDB()
 const port: number = Number(process.env.PORT) || 8000
 
 // Define routes for Client
-app.use('/api/v1/clients', getClients, getClientById)
-app.use('/api/v1/clients', postClient)
-app.use('/api/v1/clients', editClient)
-app.use('/api/v1/clients', deleteClient)
+app.use(
+	'/api/v1/clients',
+	getClients,
+	getClientById,
+	postClient,
+	editClient,
+	deleteClient,
+)
+// Define routes for Project
+app.use(
+	'/api/v1/projects',
+	getProjects,
+	getProjectById,
+	getProjectsByClientId,
+	createProject,
+	updateProject,
+	deleteProject,
+)
 
 // Start the server
 app.listen(port, () => {
