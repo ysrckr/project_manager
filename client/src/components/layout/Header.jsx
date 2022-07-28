@@ -1,10 +1,10 @@
-import React, { useLayoutEffect } from 'react'
-import { FC } from 'react'
+import { useLayoutEffect } from 'react'
+
 import { Link } from 'wouter'
 import { useState } from 'react'
-import styles from '../../src/styles/modules/Header.module.scss'
-import MobileNav from '../layouts/MobileNav'
-const Header: FC = () => {
+
+import MobileNav from './MobileNav'
+const Header = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
 	const handleResize = () => {
@@ -18,7 +18,7 @@ const Header: FC = () => {
 	}, [screenWidth])
 	return (
 		<header>
-			<div className={styles.link}>
+			<div>
 				<Link href="/">
 					<img
 						src="../src/assets/fire.png"
@@ -31,7 +31,7 @@ const Header: FC = () => {
 			{screenWidth > 768 ? (
 				<nav>
 					<ul>
-						<li className={styles.list}>
+						<li>
 							<Link href="/">Home</Link>
 						</li>
 					</ul>
