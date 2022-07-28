@@ -20,12 +20,7 @@ const Header = () => {
 		<header>
 			<div>
 				<Link href="/">
-					<img
-						src="../src/assets/fire.png"
-						alt="fire"
-						height={100}
-						width={250}
-					/>
+					<img src="../src/assets/fire.png" alt="fire" />
 				</Link>
 			</div>
 			{screenWidth > 768 ? (
