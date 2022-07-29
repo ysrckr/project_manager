@@ -1,0 +1,87 @@
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	&-title {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+	&-subtitle {
+		font-size: 1.3rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+	&-desc {
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+		font-weight: 400;
+		span {
+			font-weight: bold;
+		}
+	}
+	&-link {
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+	}
+	&-status {
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+		font-weight: 500;
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&-column {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 2.5rem;
+		margin: 2rem;
+		@include mq(sm) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include mq(md) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		&-button-wrapper {
+			display: flex;
+			gap: 1rem;
+			justify-content: space-between;
+			align-items: center;
+			width: 20rem;
+		}
+
+		&-box {
+			border: rgba($secondary_color, 0.2) 2px solid;
+			border-radius: 5px;
+			padding: 1rem;
+			background-color: rgba($light_color, 0.3);
+			box-shadow: 1px 1px 5px 1px rgba($secondary_color, 0.2),
+				4px 2px 4px 2px rgba($secondary_color, 0.2);
+		}
+	}
+	&-btn {
+		margin: 2rem;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+        box-shadow: 1px 2px 8px 2px rgba($dark_color, 0.2),;
+	}
+	&-btn.delete {
+		background-color: rgba(red, 0.6);
+		svg {
+			fill: $light_color;
+		}
+	}
+	&-btn.edit {
+		background-color: rgba($secondary_color, 0.6);
+		svg {
+			fill: $light_color;
+		}
+	}
+}

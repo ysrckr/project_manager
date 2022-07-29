@@ -8,6 +8,10 @@ const getClient = axios.create({
 })
 
 export const getAllClients = async () => {
-	const res = await getClient('/api/v1/clients')
-	return res.data
+	try {
+		const res = await getClient('/api/v1/clients')
+		return res.data
+	} catch (err) {
+		console.log(err)
+	}
 }
