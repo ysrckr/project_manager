@@ -2,13 +2,7 @@ import { Link } from 'wouter'
 import { FaTrash } from 'react-icons/fa'
 import { FaEdit } from 'react-icons/fa'
 
-const Project = ({ project }) => {
-	const deleteProject = () => {
-		console.log('delete project')
-	}
-	const editProject = () => {
-		console.log('edit project')
-	}
+const Project = ({ project, del, edit }) => {
 	return (
 		<div className="project-column-box">
 			<h3 className="project-subtitle">{project.name}</h3>
@@ -22,12 +16,10 @@ const Project = ({ project }) => {
 				See Details
 			</Link>
 			<div className="project-button-wrapper">
-				<button className="btn project-btn edit" onClick={editProject}>
+				<button className="btn project-btn edit" onClick={edit}>
 					<FaEdit />
 				</button>
-				<button
-					className="btn project-btn delete"
-					onClick={deleteProject}>
+				<button className="btn project-btn delete" onClick={() => del(project._id)}>
 					<FaTrash />
 				</button>
 			</div>
