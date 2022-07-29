@@ -21,7 +21,9 @@ const router = express_1.default.Router();
 // @access  Public
 const editClient = router.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const client = yield Client_1.default.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const client = yield Client_1.default.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+        });
         res.status(200).json(client);
     }
     catch (err) {

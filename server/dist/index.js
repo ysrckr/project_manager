@@ -23,9 +23,7 @@ dotenv_1.default.config({
 // Create a new express application instance
 const app = (0, express_1.default)();
 // Allow cross-origin requests
-app.use((0, cors_1.default)({
-    origin: 'http://localhost:3000',
-}));
+app.use((0, cors_1.default)());
 // Configure express to use body-parser as middle-ware
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));

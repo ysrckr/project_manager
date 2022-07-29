@@ -108,3 +108,11 @@ main {
 	box-shadow: 3px 2px 20px 4px rgba($dark_color, 0.3);
 	min-height: 80vh;
 }
+
+.spinner-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	width: auto;
+}

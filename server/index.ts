@@ -25,11 +25,7 @@ dotenv.config({
 const app: Express = express()
 
 // Allow cross-origin requests
-app.use(
-	cors({
-		origin: 'http://localhost:3000',
-	}),
-)
+app.use(cors())
 
 // Configure express to use body-parser as middle-ware
 app.use(bodyParser.json())
