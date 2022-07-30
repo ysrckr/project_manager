@@ -2,10 +2,8 @@ import { getAllProjects, deleteProject } from '../api/projectCalls'
 import { getAllClients } from '../api/clientCalls'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import Spinner from '../components/Spinner'
-import Layout from './layout/Layout'
 import Project from './Project'
 import { queryClient } from '../queries/queryClient'
-import { toast, ToastContainer } from 'react-toastify'
 
 const Projects = () => {
 	const { data, isLoading, isError, error } = useQuery(

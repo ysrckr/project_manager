@@ -1,7 +1,13 @@
 import { Link } from 'wouter'
 import { FaTrash, FaEdit } from 'react-icons/fa'
-const Project = ({ project, del, edit, getClient }) => {
+import { useState } from 'react'
+import Modal from './Modal'
+const Project = ({ project, del, getClient }) => {
+	const [isOpen, setIsOpen] = useState(false)
 	const client = getClient(project.clientId)
+	const edit = () => {
+		setIsOpen(true)
+	}
 	return (
 		<div className="project-column-box">
 			<h3 className="project-subtitle">{project.name}</h3>
@@ -30,6 +36,7 @@ const Project = ({ project, del, edit, getClient }) => {
 					<FaTrash />
 				</button>
 			</div>
+			<Modal isOpen={isOpen} project={project} close={setIsOpen}/>
 		</div>
 	)
 }

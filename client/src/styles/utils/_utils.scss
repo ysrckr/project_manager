@@ -116,3 +116,11 @@ main {
 	height: 50vh;
 	width: auto;
 }
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: space-between;
+	gap: 1rem;
+}
