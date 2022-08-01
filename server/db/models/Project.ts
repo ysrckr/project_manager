@@ -18,6 +18,7 @@ const projectSchema = new Schema<IProject>({
 	clientId: {
 		type: Schema.Types.ObjectId,
 		ref: 'Client',
+		required: true,
 	},
 })
 

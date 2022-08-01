@@ -7,6 +7,11 @@ const Project = ({ project, del, getClient }) => {
 	const client = getClient(project.clientId)
 	const edit = () => {
 		setIsOpen(true)
+		document.body.style.overflow = 'hidden'
+	}
+	const close = () => {
+		setIsOpen(false)
+		document.body.style.overflow = 'auto'
 	}
 	return (
 		<div className="project-column-box">
@@ -36,7 +41,7 @@ const Project = ({ project, del, getClient }) => {
 					<FaTrash />
 				</button>
 			</div>
-			<Modal isOpen={isOpen} project={project} close={setIsOpen}/>
+			<Modal isOpen={isOpen} project={project} close={close} />
 		</div>
 	)
 }

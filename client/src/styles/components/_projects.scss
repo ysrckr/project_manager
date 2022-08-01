@@ -71,6 +71,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 0.5rem;
 		box-shadow: 1px 2px 8px 2px rgba($dark_color, 0.2);
+		background-color: $secondary_color;
 		@include mq(sm) {
 			margin: 2rem 1rem;
 		}

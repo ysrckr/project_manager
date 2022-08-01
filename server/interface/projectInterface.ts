@@ -1,4 +1,4 @@
-import {Types} from 'mongoose';
+import { Types } from 'mongoose'
 
 interface IProject {
 	name: string
@@ -10,7 +10,7 @@ interface IProject {
 enum Status {
 	new = 'Not Started',
 	progress = 'In Progress',
-	done = 'Compeleted',
+	done = 'Completed',
 }
 
 export { IProject, Status }

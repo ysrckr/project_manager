@@ -5,6 +5,6 @@ var Status;
 (function (Status) {
     Status["new"] = "Not Started";
     Status["progress"] = "In Progress";
-    Status["done"] = "Compeleted";
+    Status["done"] = "Completed";
 })(Status || (Status = {}));
 exports.Status = Status;

@@ -6,9 +6,7 @@ const Modal = ({ isOpen, project, close }) => {
 			<div className="modal-content">
 				<div className="modal-header">
 					<h3 className="modal-title">{project.name}</h3>
-					<button
-						className="modal-close"
-						onClick={() => close(false)}>
+					<button className="modal-close" onClick={close}>
 						<CgCloseO />
 					</button>
 				</div>
